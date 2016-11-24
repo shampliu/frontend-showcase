@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Alarm Clock</title>
+  <link rel="stylesheet" href="../css/alarm-clock/day.css">
+</head>
+<body>
+  <div class="content">
+    <div id="current-time-wrapper">
+      <h1 id="current-time"></h1>
+      <div id="current-time-info">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <form id="create-alarm-form">
+
+      <div id="alarm-time">
+        <span><input id="alarm-hours" type="text" placeholder="00" size="2" maxlength="2"></span> 
+        <span><input id="alarm-minutes" type="text" placeholder="00" size="2" maxlength="2"></span> 
+        <span><a href="#" id="alarm-am-pm">AM</a></span>
+      </div>
+      <input id="alarm-name" type="text" placeholder="Alarm Name"> 
+      <select id="alarm-ringtone">
+        <option value="intro.mp3">&#x2669; The xx - Intro</option>
+        <option value="fountain_of_dreams.mp3">&#x2669; SSBM - Fountain of Dreams</option>
+      </select> 
+
+     
+      <input id="alarm-submit" type="submit" value="Add Alarm"/> 
+    </form>
+    
+    <ul id="alarms">
+    </ul>
+
+
+    <div id="theme-switcher">
+      <a href="#" onclick="changeTheme('day.css');">Day</a> 
+      <a href="#" onclick="changeTheme('night.css');">Night</a>
+    </div>
+
+    <!-- Hidden -->
+    <div id="alarm-modal" class="modal">
+      <div class="modal-content">
+        <p id="alarm-modal-text"></p>
+        <button id="stop-alarm">Stop Alarm</button>
+      </div>
+    </div>
+    
+  </div>
+
+  <script src="../js/alarm-clock/alarm.js"></script>
+  <script src="../js/alarm-clock/index.js"></script>
+</body>
+</html>
