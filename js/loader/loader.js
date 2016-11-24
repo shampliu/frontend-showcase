@@ -1,27 +1,25 @@
 var mask1 = document.getElementById('mask1');
 var mask2 = document.getElementById('mask2');
+var perc = document.getElementById('perc');
 
-var deg1 = 90;
-var deg2 = -90;
-
-
-mask1.style.transform = 'rotate(' + deg1 + 'deg)';
-mask2.style.transform = 'rotate(' + deg2 + 'deg)';
+var startDeg = 90;
 
 var progressInterval;
 var fps = 60;
 
 document.addEventListener("DOMContentLoaded", function(event) {
     var percent = 0;
+    perc.innerHTML = percent;
     progressInterval = setInterval(function() { // in order to use function with args
         percent++;
         progress(mask1, mask2, percent);
+        perc.innerHTML = percent;
     }, 1000/fps)
 });
 
 function progress(mask1, mask2, percent) {
-    deg1 += 360/100;
-    mask1.style.transform = 'rotate(' + deg1 + 'deg)';
+    var newDeg = startDeg + (360/100) * percent;
+    mask1.style.transform = 'rotate(' + newDeg + 'deg)';
 
     if (percent >= 100) {
         clearInterval(progressInterval);
