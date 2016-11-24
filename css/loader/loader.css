@@ -35,15 +35,14 @@ div#mask1, div#mask2 {
     width: 100px;
     border-radius: 100px 100px 0 0;
     background: white;
-    transition: transform 300ms ease-in-out;
 }
 
 div#mask1 {
     transform: rotate(90deg);
-    z-index: 2;
+    z-index: 1;
 }
 
 div#mask2 {
     transform: rotate(-90deg);
-    z-index: 1;
+    z-index: 2;
 }
