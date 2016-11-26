@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+}
+
+#ball {
+  position: absolute;
+  border-radius: 50%;
+  display: block;
+  background: blue;
+}
