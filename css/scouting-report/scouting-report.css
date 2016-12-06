@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box; }
+
+html {
+  background: rgba(128, 128, 128, 0.16);
+  font-family: sans-serif;
+  height: 100%;
+  margin: 0; }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0; }
+
+p, h3, h2 {
+  margin: 0; }
+
+.content-wrapper {
+  max-width: 767px;
+  display: block;
+  margin: 0 auto;
+  height: auto; }
+  .content-wrapper .subheading {
+    margin: 15px 0; }
+  .content-wrapper p {
+    font-weight: 300; }
+  .content-wrapper blockquote {
+    line-height: 24px;
+    font-weight: 300;
+    padding-left: 20px;
+    border-left: 4px solid gray; }
+  .content-wrapper #scouting {
+    background: whitesmoke;
+    position: relative;
+    height: 300px;
+    width: 100%; }
+    .content-wrapper #scouting #scouting-sidebar {
+      position: relative;
+      overflow: scroll;
+      display: inline-block;
+      float: left;
+      height: 100%;
+      width: 30%; }
+      .content-wrapper #scouting #scouting-sidebar li.school-wrapper {
+        position: relative;
+        cursor: pointer;
+        background: whitesmoke;
+        height: auto;
+        padding-right: 15px; }
+        .content-wrapper #scouting #scouting-sidebar li.school-wrapper div.tick {
+          z-index: 1;
+          width: 25px;
+          height: 25px;
+          position: absolute;
+          background: #3E5E7F;
+          margin: 0;
+          transform: rotate(45deg);
+          top: calc(50% - 17.68px);
+          left: calc(100% - 15px - 17.68px); }
+        .content-wrapper #scouting #scouting-sidebar li.school-wrapper div.school {
+          position: relative;
+          z-index: 2;
+          background: whitesmoke;
+          border-bottom: 2px solid #3E5E7F;
+          height: 100%;
+          padding: 10px; }
+          .content-wrapper #scouting #scouting-sidebar li.school-wrapper div.school .record {
+            color: #67737F; }
+          .content-wrapper #scouting #scouting-sidebar li.school-wrapper div.school h3 {
+            text-transform: uppercase; }
+            .content-wrapper #scouting #scouting-sidebar li.school-wrapper div.school h3 span.rank {
+              color: #3E5E7F; }
+        .content-wrapper #scouting #scouting-sidebar li.school-wrapper div.info {
+          display: none; }
+        .content-wrapper #scouting #scouting-sidebar li.school-wrapper div.school.active {
+          background: #3E5E7F; }
+          .content-wrapper #scouting #scouting-sidebar li.school-wrapper div.school.active .record {
+            color: #C8E3FF; }
+          .content-wrapper #scouting #scouting-sidebar li.school-wrapper div.school.active h3 {
+            color: white; }
+            .content-wrapper #scouting #scouting-sidebar li.school-wrapper div.school.active h3 span.rank {
+              color: whitesmoke; }
+    .content-wrapper #scouting #scouting-description {
+      background: rgba(128, 128, 128, 0.2);
+      padding: 20px;
+      overflow: scroll;
+      display: inline-block;
+      float: right;
+      height: 100%;
+      width: 70%; }
+      .content-wrapper #scouting #scouting-description .header {
+        color: #3E5E7F; }
+      .content-wrapper #scouting #scouting-description p {
+        margin-bottom: 10px;
+        font-size: 0.9em;
+        font-weight: 300; }
+      .content-wrapper #scouting #scouting-description table.stats {
+        margin: 20px 0;
+        border-spacing: 0;
+        background: whitesmoke;
+        font-size: 0.8em; }
+        .content-wrapper #scouting #scouting-description table.stats tr:nth-child(1) {
+          font-weight: bold; }
+          .content-wrapper #scouting #scouting-description table.stats tr:nth-child(1) td {
+            border-top: 2px solid #3E5E7F; }
+        .content-wrapper #scouting #scouting-description table.stats tr td {
+          padding: 5px;
+          vertical-align: top; }
+
+@media only screen and (max-width: 750px) {
+  .content-wrapper #scouting #scouting-sidebar {
+    height: auto;
+    margin-top: 20px;
+    text-align: center;
+    width: 100%; }
+    .content-wrapper #scouting #scouting-sidebar li.school-wrapper {
+      margin-bottom: 10px;
+      height: 30px;
+      font-size: 0.8em;
+      display: inline-block;
+      padding: 0; }
+      .content-wrapper #scouting #scouting-sidebar li.school-wrapper .school .record {
+        display: none; }
+      .content-wrapper #scouting #scouting-sidebar li.school-wrapper div.tick {
+        display: none; }
+  .content-wrapper #scouting div#scouting-description {
+    width: 100%; } }
+
+/*# sourceMappingURL=scouting-report.css.map */

@@ -1,0 +1,199 @@
+$tick-gap: 15px;
+$scouting-background: whitesmoke; 
+$tick-radius: 17.68px;
+$color1: #3E5E7F;
+$color2: #C8E3FF;
+$color3: #7BBCFF;
+$color4: #67737F;
+$color5: #6296CC;
+
+
+* {
+	box-sizing: border-box; 
+}
+
+html {
+	background: rgba(128,128,128, 0.16);
+	font-family: sans-serif;
+	height: 100%;
+	margin: 0;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+p, h3, h2 {
+	margin: 0;
+}
+
+.content-wrapper {
+	.subheading {
+		margin: 15px 0;
+	}
+	p {
+		font-weight: 300;
+	}
+	blockquote {
+		line-height: 24px;
+		font-weight: 300;
+		padding-left: 20px;
+		border-left: 4px solid gray;
+	}
+
+	max-width: 767px;
+	display: block;
+	margin: 0 auto;
+	height: auto;
+
+	#scouting {
+		background: whitesmoke;
+		position: relative;
+		height: 300px;
+		width: 100%;
+		#scouting-sidebar {
+			position: relative;
+			overflow: scroll;
+			display: inline-block;
+			float: left;
+			height: 100%;
+			width: 30%;
+
+			li.school-wrapper {
+				div.tick {
+					z-index: 1;
+					width: 25px;
+					height: 25px;
+					position: absolute;
+					background: $color1;
+					
+					margin: 0;
+					transform: rotate(45deg); // TODO vendorize this
+					top: calc(50% - #{$tick-radius});
+					left: calc(100% - #{$tick-gap} - #{$tick-radius});
+
+				}
+
+				position: relative;
+				cursor: pointer;
+				background: $scouting-background;
+				height: auto;
+				padding-right: $tick-gap;
+				div.school {
+					position: relative;
+					z-index: 2;
+					.record {
+						color: $color4;
+					}
+					background: whitesmoke;
+					border-bottom: 2px solid $color1;
+					height: 100%;
+					padding: 10px;
+					h3 {
+					
+						text-transform: uppercase;
+						span.rank {
+							color: $color1;
+						}
+					}
+
+					
+				}
+				div.info {
+					display: none;
+				}
+				div.school.active {
+					.record {
+						color: $color2;
+					}
+					background: $color1;
+					h3 {
+						color: white;
+						span.rank {
+							color: whitesmoke;
+						}
+					}
+				}
+			}
+	
+			
+
+		}
+
+		#scouting-description {
+			background: rgba(128, 128, 128, 0.2);
+			padding: 20px;
+			overflow: scroll;
+			display: inline-block;
+			float: right;
+			height: 100%;
+			width: 70%;
+			
+			.header {
+				color: $color1;
+			}
+			p {
+				margin-bottom: 10px;
+				font-size: 0.9em;
+				font-weight: 300;
+			}
+
+			table.stats {
+				margin: 20px 0;
+				border-spacing: 0;
+				background: whitesmoke;
+				font-size: 0.8em;
+				tr {
+					&:nth-child(1) {
+						font-weight: bold;
+						td {
+							border-top: 2px solid $color1;
+						}
+					}
+					td {
+						padding: 5px;
+						vertical-align: top;
+					}
+				}
+			}
+
+
+		}
+	}
+
+
+}
+
+@media only screen and (max-width: 750px) {
+	.content-wrapper {
+		#scouting {
+			#scouting-sidebar {
+				height: auto;
+				margin-top: 20px;
+				text-align: center;
+				width: 100%;
+				li.school-wrapper {
+					margin-bottom: 10px;
+					height: 30px;
+					font-size: 0.8em;
+					display: inline-block;
+					padding: 0;
+					.school {
+						.record {
+							display: none;
+						}
+					}
+					div.tick {
+						display: none;
+					}
+				}
+			}
+
+			div#scouting-description {
+				width: 100%;
+			}
+		}
+	}
+}
