@@ -1,0 +1,46 @@
+div.content {
+  margin: 0 auto;
+  width: 767px;
+
+
+  div.scrollspy {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    width: 400px;
+    margin: 0 auto;
+    background: red;
+    left: 0;
+    right: 0;
+    
+    div.top {
+      flex-direction: row;
+      width: 100%;
+      height: 80px;
+    }
+    div.bottom {
+      position: relative;
+      width: 100%;
+      height: 20px;
+      background: whitesmoke;
+      div.progress {
+        position: absolute;
+        width: 1%;
+        height: 100%;
+        background: green;
+      }
+    }
+
+  }
+  article.article {
+    font-size: 18px;
+    font-family: "Proxima Nova", sans-serif;
+    
+  }
+  footer.footer {
+    height: 1200px;;
+    width: 100%;
+    background: whitesmoke;
+  }
+}
