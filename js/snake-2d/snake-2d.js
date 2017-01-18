@@ -63,6 +63,8 @@
   function draw() {
     ctx.fillStyle = "whitesmoke";
     ctx.fillRect(0, 0, w, h);
+    ctx.strokeStyle = "grey";
+    ctx.strokeRect(0, 0, w, h);
 
     var dx = snake[0].x,
         dy = snake[0].y;
@@ -87,6 +89,7 @@
 
     if (dx == food.x && dy == food.y) {
       score++;
+      snake_size++;
       draw_food();
 
     } else {
@@ -98,9 +101,16 @@
       y: dy
     }
     snake.unshift(tail);
-    var st = 0;
+    var gb = 0.2; // greater bound
+    var st = 1.0;
+    var inc = (st - gb) / snake_size;
+    var fl = `rgba(0, 0, 255, 1.0)`;
     for (var i = 0; i < snake.length; i++) {
-      draw_cell(snake[i].x, snake[i].y, "blue");
+      draw_cell(snake[i].x, snake[i].y, fl);
+      st -= inc;
+      fl = `rgba(0, 0, 255, ${st})`;
+      console.log(st);
+      console.log(fl);
     }
 
     draw_cell(food.x, food.y, "red");
